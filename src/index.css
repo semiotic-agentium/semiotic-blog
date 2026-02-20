@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 92%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 92%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 92%;
+
+    --primary: 153 100% 45%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 70%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 153 100% 45%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 153 100% 45%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 153 100% 45%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 153 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Dot grid background pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, hsl(0 0% 25%) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Green glow effect */
+.glow-green {
+  text-shadow: 0 0 20px hsl(153 100% 45% / 0.3), 0 0 40px hsl(153 100% 45% / 0.1);
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px hsl(153 100% 45% / 0.08);
+}
+
+/* Prose styling for blog content */
+.prose-custom {
+  @apply text-sm leading-relaxed text-secondary-foreground;
+}
+.prose-custom h1 {
+  @apply mt-10 mb-4 text-2xl font-bold text-foreground;
+}
+.prose-custom h2 {
+  @apply mt-10 mb-4 text-xl font-bold text-foreground;
+}
+.prose-custom h3 {
+  @apply mt-8 mb-3 text-lg font-semibold text-foreground;
+}
+.prose-custom h4, .prose-custom h5 {
+  @apply mt-6 mb-2 text-base font-semibold text-foreground;
+}
+.prose-custom p {
+  @apply mb-4;
+}
+.prose-custom a {
+  @apply text-primary underline underline-offset-2 hover:opacity-80 transition-opacity;
+}
+.prose-custom ul, .prose-custom ol {
+  @apply mb-4 ml-6;
+}
+.prose-custom ul {
+  @apply list-disc;
+}
+.prose-custom ol {
+  @apply list-decimal;
+}
+.prose-custom li {
+  @apply mb-2;
+}
+.prose-custom blockquote {
+  @apply my-4 border-l-2 border-primary pl-4 italic text-muted-foreground;
+}
+.prose-custom pre {
+  @apply my-6 overflow-x-auto rounded-lg border border-border bg-card p-4 text-xs;
+}
+.prose-custom code {
+  @apply rounded bg-card px-1.5 py-0.5 text-xs text-primary;
+}
+.prose-custom pre code {
+  @apply bg-transparent p-0 text-foreground;
+}
+.prose-custom hr {
+  @apply my-8 border-border;
+}
+.prose-custom table {
+  @apply my-6 w-full border-collapse text-xs;
+}
+.prose-custom th {
+  @apply border border-border bg-card px-3 py-2 text-left font-semibold text-foreground;
+}
+.prose-custom td {
+  @apply border border-border px-3 py-2;
+}
+.prose-custom img {
+  @apply my-6 rounded-lg border border-border;
+}
+.prose-custom strong {
+  @apply font-semibold text-foreground;
+}
+.prose-custom em {
+  @apply text-muted-foreground;
+}
